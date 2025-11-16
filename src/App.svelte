@@ -20,7 +20,7 @@
                 <div class="logo-icon">
                   <img src="/mecamblock_icon.png" alt="">
                 </div>
-                <div class="logo-text">Mecamblock</div>
+                <div class="logo-text">MecamBlock</div>
             </a>
             
             <ul class="nav-links">
