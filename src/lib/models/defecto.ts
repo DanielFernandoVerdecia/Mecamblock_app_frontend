@@ -1,6 +1,6 @@
 export class Defecto {
-    
     id: number;
+    loteId: number;   // nuevo
     producto: string;
     descripcion: string;
     gravedad: 'baja'|'media'|'alta';
@@ -8,8 +8,9 @@ export class Defecto {
     fechaModificacion: string | null;
     estado: 'abierto'|'en_proceso'|'cerrado';
 
-    constructor(producto: string, descripcion: string, gravedad: 'baja'|'media'|'alta'){
+    constructor(loteId: number, producto: string, descripcion: string, gravedad: 'baja'|'media'|'alta'){
         this.id = Date.now();
+        this.loteId = loteId;
         this.producto = producto;
         this.descripcion = descripcion;
         this.gravedad = gravedad;
@@ -17,5 +18,4 @@ export class Defecto {
         this.fechaModificacion = null;
         this.estado = 'abierto';
     }
-
 }
