@@ -1,15 +1,16 @@
 export class Lote {
     id: number;
-    nombre: string;
+    producto: string;        
     cantidad: number;
     fechaCreacion: string;
-    estado: 'activo' | 'en_espera' | 'cerrado';
+    estado: 'producido' | 'en_espera' | 'rechazado' | 'aceptado';
 
-    constructor(nombre: string, cantidad: number) {
+    constructor(producto: string, cantidad: number) {
         this.id = Date.now();
-        this.nombre = nombre;
+        this.producto = producto;
         this.cantidad = cantidad;
         this.fechaCreacion = new Date().toISOString();
-        this.estado = 'activo';
+        this.estado = 'producido';
     }
 }
+
