@@ -95,7 +95,7 @@
     <footer>
         <div class="footer-bottom">
             <p class="footer-copyright">
-                © 2025 H.V. Mecamblock CIA S.A.S JOSE ES LINDO
+                © 2025 H.V. Mecamblock CIA S.A.S 
             </p>
             
         </div>
