@@ -33,7 +33,7 @@
     on:cleared={onCleared}
   />
   <div class="mt-3">
-    <h6>Preview guardada (desde localStorage)</h6>
+    <h6>Previsualización guardada (desde localStorage)</h6>
     {#if savedPreview}
       <img src={savedPreview} alt="Preview firma" class="img-fluid border" style="max-height:200px;">
       <p class="small text-muted">Bytes aprox: {Math.round((savedPreview.length*3)/4)}</p>

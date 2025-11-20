@@ -5,7 +5,7 @@
 </script>
 
 
-<h1 style="text-align: center; margin-top: 2rem;">HU02 - Defectos / Inspecciones</h1>
+<h1 style="text-align: center; margin-top: 2rem;">Defectos / Inspecciones</h1>
 
 <div style="display:flex; gap:2rem; align-items:flex-start;">
   <div style="flex:1;">

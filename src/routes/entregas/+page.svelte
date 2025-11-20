@@ -141,7 +141,7 @@
 
 </script>
 
-<h1 style="text-align: center; margin-top: 2rem;">HU01 - Comprobante de entrega</h1>
+<h1 style="text-align: center; margin-top: 2rem;">Comprobante de entrega</h1>
 
 
 

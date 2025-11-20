@@ -177,7 +177,7 @@
 
 <div class="maintenance-container">
 
-    <h1 style="text-align: center; margin-top: 2rem;">HU03 - Gestión de Mantenimiento</h1>
+    <h1 style="text-align: center; margin-top: 2rem;">Gestión de Mantenimiento</h1>
 
     {#if successMessage}
         <div class="success-message">
@@ -188,7 +188,7 @@
     <!-- FORMULARIO -->
     <div class="form-section" class:editing-mode={editingId !== null}>
         <div class="form-header">
-            <h2>{editingId !== null ? '✏️ Editando Intervención' : '📝 Registrar Intervención'}</h2>
+            <h2>{editingId !== null ? 'Editando Intervención' : 'Registrar Intervención'}</h2>
             {#if editingId !== null}
                 <button type="button" class="btn-cancel-link" on:click={cancelarEdicion}>Cancelar edición</button>
             {/if}

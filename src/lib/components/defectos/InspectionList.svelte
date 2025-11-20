@@ -158,7 +158,7 @@
     
     <div class="card" class:editing={modoEdicion}>
         <h2>
-            {modoEdicion ? '✏️ Editar Lote' : '➕ Registrar Lote Producido'}
+            {modoEdicion ? 'Editar Lote' : 'Registrar Lote Producido'}
         </h2>
 
         <label>Producto</label>
