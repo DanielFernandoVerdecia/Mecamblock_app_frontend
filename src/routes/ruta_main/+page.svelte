@@ -29,7 +29,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Inventario</a></li>
 
-                <p style = "font-size: 20px;">¡Bienvenido!</p>
+                <p style="font-size: 1.5rem; font-weight: 500;">¡Bienvenido!</p>
                 
             </ul>
 
@@ -67,17 +67,11 @@
         
             <div class="cta-buttons">
                 <button onclick = {()=> enrutador('/entregas')} class="cta-primary">Entregas</button>
-                <button onclick = {()=> enrutador('defectos')} class="btn btn-danger btn-lg">Defectos</button>
-                <button onclick = {()=> enrutador('mantenimiento')} class="cta-secondary">Mantenimientos</button>
+                <button onclick = {()=> enrutador('defectos')} class="cta-primary">Defectos</button>
+                <button onclick = {()=> enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
             </div>
             
-            <div class="stats-section">
-               
-                <div class="stat-card">
-                    <span class="stat-label">Bloques y más bloques!!!!!</span>
-                </div>
-               
-            </div>
+        
 
 
         
@@ -215,13 +209,14 @@
  
 
   .nav-links {
+    font-size: 1.5rem;
       display: flex;
       list-style: none;
       gap: 1rem;
   }
 
   .nav-links a {
-      color: var(--text-secondary);
+      color: var(--text-primary);
       text-decoration: none;
       padding: 0.75rem 1.5rem;
       border-radius: 50px;
@@ -476,8 +471,7 @@
       margin-top: 2rem;
       animation: slideInUp 1s ease-out 0.6s both;
   }
-
-  .cta-primary, .cta-secondary {
+  .cta-primary {
       padding: 1rem 2rem;
       border-radius: 50px;
       text-decoration: none;
@@ -498,7 +492,7 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 35px var(--accent-glow);
   }
-
+/*
   .cta-secondary {
       background: var(--glass-bg);
       backdrop-filter: blur(20px);
@@ -511,7 +505,7 @@
       background: rgba(255, 255, 255, 0.12);
       transform: translateY(-3px);
   }
-
+*/
   @keyframes slideInUp {
       from {
           opacity: 0;
@@ -522,55 +516,6 @@
           transform: translateY(0);
       }
   }
-
-  /* Stats */
-  .stats-section {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 4rem;
-      flex-wrap: wrap;
-  }
-
-  .stat-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      min-width: 150px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-  }
-
-  .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      display: block;
-  }
-
-  .stat-label {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-top: 0.5rem;
-  }
-
-
-
-
-
-
-
-
-
 
   /* Footer */
   footer {
