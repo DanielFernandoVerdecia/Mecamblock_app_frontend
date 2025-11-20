@@ -19,12 +19,12 @@
   <nav id="navbar">
         <div class="nav-container">
 
-            <a href="#home" class="logo">
+            <div class="logo">
                 <div class="logo-icon">
-                  <img src="images/mecamblocklogo.jpg" alt="MecamBlock logo">
+                  <img src="/images/mecamblocklogo.jpg" alt="MecamBlock logo">
                 </div>
                 <div class="logo-text">MecamBlock</div>
-            </a>
+            </div>
             
             <ul class="nav-links">
                 <li><a href="#home">Inventario</a></li>
