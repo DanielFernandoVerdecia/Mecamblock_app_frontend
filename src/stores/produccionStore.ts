@@ -1,4 +1,4 @@
 import { createLocalStore } from './localStore';
-import type { Produccion } from '$lib/models/produccion';
+import type { ProductionRecord } from '$lib/models/production';
 
-export const stockStore = createLocalStore<Produccion>('produccion', []);
+export const stockStore = createLocalStore<ProductionRecord>('produccion', []);

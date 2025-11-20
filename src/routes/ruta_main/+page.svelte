@@ -69,6 +69,10 @@
                 <button onclick = {()=> enrutador('/entregas')} class="cta-primary">Entregas</button>
                 <button onclick = {()=> enrutador('defectos')} class="cta-primary">Defectos</button>
                 <button onclick = {()=> enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
+                <button onclick = {()=> enrutador('defectos')} class="cta-primary">Defectos</button>
+                <button onclick = {()=> enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
+                <button onclick = {()=> enrutador('stock')} class="cta-primary">Productos</button>
+                <button onclick = {()=> enrutador('produccion')} class="cta-primary">Produccion</button>
             </div>
             
         

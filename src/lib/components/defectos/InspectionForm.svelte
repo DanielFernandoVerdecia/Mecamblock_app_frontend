@@ -61,14 +61,7 @@
 <div class="card">
 
   <h3>Registrar inspección por lote</h3>
-
-  <button type="button"
-  onclick = {()=> enrutador('/lotes')}
-  class="btn btn-secondary"
-  >
-    Agregar Nuevo Lote de productos
-  </button>
-
+  
   <label>Lote</label>
   <select bind:value={selectedLoteId}>
     <option value={null}>-- Seleccione lote --</option>
@@ -77,7 +70,7 @@
     {/each}
   </select>
 
-  <label>Producto (opcional)</label>
+  <label>Nombre del Producto (Opcional)</label>
   <input bind:value={producto} placeholder="Nombre del producto" />
 
   <label>Inspeccionado</label>

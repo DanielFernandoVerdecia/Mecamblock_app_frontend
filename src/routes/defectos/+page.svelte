@@ -21,7 +21,11 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;">
+		gap: 1rem;
+    margin-top: 2rem;
+    "
+    
+    >
 
   <button type="button" class="btn btn-secondary btn-lg"
   on:click = {()=> enrutador('/ruta_main')}

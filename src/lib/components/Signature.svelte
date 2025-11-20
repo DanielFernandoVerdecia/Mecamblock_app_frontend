@@ -207,6 +207,8 @@
 </script>
 
 <div class="d-flex flex-column">
+
+  <h1>Debes firmar con el Mouse (haciendo presión) o puedes usar tu pantalla táctil</h1>
   <div class="border mb-2" style="max-width:100%; overflow:hidden;">
     <canvas bind:this={canvas} class="w-100" style="touch-action: none; display:block;"></canvas>
   </div>
