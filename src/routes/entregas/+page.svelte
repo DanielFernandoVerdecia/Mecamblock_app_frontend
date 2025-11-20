@@ -143,14 +143,6 @@
 
 <h1 style="text-align: center; margin-top: 2rem;">HU01 - Comprobante de entrega</h1>
 
-<h2 style="text-align: center; margin-top: 2rem;">Te recomendamos que cuando crees una entrega le des
-  click a cambiar estado y este pasa de pendiente -> entregado -> finalizado
-
-</h2>
-
-<h3 style="text-align: center; margin-top: 2rem;">
-Así de simple :3
-</h3>
 
 
 <section>
@@ -163,14 +155,14 @@ Así de simple :3
 
     {#if currentFirma}
         <div style="text-align: center; margin: 0.5rem;">
-            <span style="color: green;">¡Firma capturada! ✅</span>
+            <span style="color: blue;">¡Firma capturada!</span>
             <br>
 
             <img src={currentFirma} alt="Vista previa firma" 
             style="max-height: 20rem; border: 5px solid #ccc;"
              />
 
-            <button type="button" class="btn btn-sm btn-outline-danger" on:click={() => currentFirma = ''}>
+            <button type="button" style="font-size: 1.5rem;" class="btn btn-primary" on:click={() => currentFirma = ''}>
               Borrar Firma
             </button>
 
@@ -179,11 +171,11 @@ Así de simple :3
 
      <button
       type="button"
-      style="font-size: 2rem;"
-      class="btn btn-info"
+      style="font-size: 1.5rem;"
+      class="btn btn-primary"
       on:click={openSignature}
       >
-        {currentFirma ? 'Cambiar Firma ✍️' : 'Firmar ✍️🖋️🖊️'}
+        {currentFirma ? 'Cambiar Firma ' : 'Firmar '}
       </button>
 
     <input 
@@ -197,13 +189,13 @@ Así de simple :3
     <button 
         type="button" 
         style="font-size: 1.5rem;" 
-        class="btn btn-warning"
+        class="btn btn-primary"
         on:click={() => fileInput.click()} 
     >
-      Subir Foto de firma 📷
+      Subir Foto
     </button>
      
-    <button type="submit" class="btn btn-primary" style="font-size: 2rem;">
+    <button type="submit" class="btn btn-primary" style="font-size: 1.5rem;">
       {editingId ? 'Guardar' : 'Registrar'}
     </button>
 

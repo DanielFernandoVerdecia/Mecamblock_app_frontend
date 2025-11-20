@@ -354,8 +354,8 @@
 
     /* Mensajes */
     .success-message {
-        background-color: #d4edda; color: #155724; padding: 12px 16px;
-        border-radius: 4px; border-left: 4px solid #28a745;
+        background-color: #d4edda; color: #1195bd; padding: 12px 16px;
+        border-radius: 4px; border-left: 4px solid rgb(39, 169, 189);
         animation: slideIn 0.3s ease-in;
     }
 
@@ -398,11 +398,11 @@
     .button-group { display: flex; gap: 10px; margin-top: 10px; }
     
     .btn-primary {
-        background-color: #27ae60; color: white; padding: 12px 30px;
+        background-color: #1c7399; color: white; padding: 12px 30px;
         border: none; border-radius: 4px; font-weight: 600; cursor: pointer;
         transition: background 0.2s; flex: 1;
     }
-    .btn-primary:hover { background-color: #229954; }
+    .btn-primary:hover { background-color: #2d9bd6; }
     
     .btn-warning { background-color: #f39c12; color: white; }
     .btn-warning:hover { background-color: #e67e22; }

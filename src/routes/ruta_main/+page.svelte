@@ -21,7 +21,7 @@
 
             <a href="#home" class="logo">
                 <div class="logo-icon">
-                  <img src="src/lib/assets/images/mecamblocklogo.jpg" alt="MecamBlock logo">
+                  <img src="images/mecamblocklogo.jpg" alt="MecamBlock logo">
                 </div>
                 <div class="logo-text">MecamBlock</div>
             </a>
@@ -67,8 +67,6 @@
         
             <div class="cta-buttons">
                 <button onclick = {()=> enrutador('/entregas')} class="cta-primary">Entregas</button>
-                <button onclick = {()=> enrutador('defectos')} class="cta-primary">Defectos</button>
-                <button onclick = {()=> enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
                 <button onclick = {()=> enrutador('defectos')} class="cta-primary">Defectos</button>
                 <button onclick = {()=> enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
                 <button onclick = {()=> enrutador('stock')} class="cta-primary">Productos</button>

@@ -273,8 +273,8 @@
 
     /* Botones */
     button { cursor: pointer; font-weight: bold; border-radius: 4px; border: none; }
-    .btn-save { background-color: #27ae60; color: white; padding: 11px 25px; }
-    .btn-save:hover { background-color: #219150; }
+    .btn-save { background-color: #1c7399; color: white; padding: 11px 25px; }
+    .btn-save:hover { background-color: #1c7399; }
     .btn-update { background-color: #f39c12; color: white; padding: 11px 25px; }
 
     .divider { border: 0; border-top: 1px solid #eee; margin: 30px 0; }
@@ -294,7 +294,7 @@
     th { text-align: left; background: #ecf0f1; padding: 12px; color: #2c3e50; }
     td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
     
-    .qty-cell { font-weight: bold; color: #27ae60; font-size: 1.1rem; }
+    .qty-cell { font-weight: bold; color: #1c7399; font-size: 1.1rem; }
     .audit-info { font-size: 0.75rem; color: #95a5a6; }
     .mod-alert { color: #e67e22; font-weight: bold; }
     
