@@ -3,18 +3,12 @@
   import { lotesStore } from '../../../stores/lotesStore';
   import { Inspection } from '$lib/models/inspection';
   import { get } from 'svelte/store';
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
   import { goto } from '$app/navigation'; 
 
 
   function enrutador(link: string){
         goto(link);
   }  
-=======
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 
   let selectedLoteId: number | null = null;
   let producto = '';
@@ -65,11 +59,6 @@
 </script>
 
 <div class="card">
-<<<<<<< Updated upstream
-  <h3>Registrar inspección por lote</h3>
-
-=======
-<<<<<<< HEAD
 
   <h3>Registrar inspección por lote</h3>
 
@@ -80,11 +69,6 @@
     Agregar Nuevo Lote de productos
   </button>
 
-=======
-  <h3>Registrar inspección por lote</h3>
-
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
   <label>Lote</label>
   <select bind:value={selectedLoteId}>
     <option value={null}>-- Seleccione lote --</option>
@@ -110,18 +94,10 @@
     Poner lote en espera automáticamente si supera promedio
   </label>
 
-<<<<<<< Updated upstream
-  <button on:click={submit}>Registrar inspección</button>
-=======
-<<<<<<< HEAD
   <button 
   type = "button"
   onclick={submit} class="btn btn-primary">Registrar inspección</button
   >
-=======
-  <button on:click={submit}>Registrar inspección</button>
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 </div>
 
 <style>
@@ -134,22 +110,5 @@
   flex-direction:column;
   gap:.5rem;
 }
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> Stashed changes
-button {
-  padding:.5rem;
-  border-radius:6px;
-  border:none;
-  background:#1e90ff;
-  color:white;
-  cursor:pointer;
-}
-<<<<<<< Updated upstream
-=======
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 </style>

@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 
 <script lang="ts">
 	import { onMount } from 'svelte';
@@ -8,16 +5,6 @@
 	import {enrutador} from '../../../routes/router_now'
 
 
-=======
->>>>>>> Stashed changes
-//Al parecer funciona pero todo esta hardcodeado, falta conectar la información
-<script lang="ts">
-	import { onMount } from 'svelte';
-
-<<<<<<< Updated upstream
-=======
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 	interface FormData {
 		fecha: string;
 		maquina: string;
@@ -133,17 +120,9 @@
 </script>
 
 <div class="maintenance-container">
-<<<<<<< Updated upstream
-	<h1>Gestión de Mantenimiento</h1>
-=======
-<<<<<<< HEAD
 
 	<h1 style="text-align: center; margin-top: 2rem;">HU03 - Gestión de Mantenimiento</h1>
 
-=======
-	<h1>Gestión de Mantenimiento</h1>
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 
 	{#if successMessage}
 		<div class="success-message">
@@ -297,11 +276,6 @@
 			{/if}
 		{/if}
 	</div>
-<<<<<<< Updated upstream
-</div>
-
-=======
-<<<<<<< HEAD
 
 
 
@@ -325,29 +299,18 @@
 </div>
 	
 
-=======
-</div>
-
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 <style>
 	.maintenance-container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 20px;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: 1rem;
-=======
->>>>>>> c49ae5952ba26ed84de8763f97cd366410813605
->>>>>>> Stashed changes
 	}
 
 	h1 {
