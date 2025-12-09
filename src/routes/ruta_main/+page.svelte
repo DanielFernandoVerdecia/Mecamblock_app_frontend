@@ -1,13 +1,17 @@
 <script lang="ts">
 
   import { goto } from '$app/navigation'; 
-
+  import { authStore } from '$lib/stores/authStore';
 
     function enrutador(link: string){
         goto(link);
     }
 
-
+    function handleLogout() {
+        authStore.logout();
+        goto('/login');
+    }
+    
 
 
 </script>
@@ -33,7 +37,9 @@
                 
             </ul>
 
-            
+            <button on:click={handleLogout} class="btn-logout">
+        Cerrar Sesión
+      </button>
       
         </div>
       
@@ -47,16 +53,9 @@
             <div class="geo-shape geo-1"></div>
             <div class="geo-shape geo-2"></div>
             <div class="particles">
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
-                <span class="particle"></span>
+                {#each Array(10) as _}
+          <span class="particle"></span>
+        {/each}
             </div>
         </div>
 
@@ -66,12 +65,12 @@
 
         
             <div class="cta-buttons">
-                <button onclick = {()=> enrutador('/entregas')} class="cta-primary">Entregas</button>
-                <button onclick = {()=> enrutador('defectos')} class="cta-primary">Defectos</button>
-                <button onclick = {()=> enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
-                <button onclick = {()=> enrutador('stock')} class="cta-primary">Productos</button>
-                <button onclick = {()=> enrutador('produccion')} class="cta-primary">Produccion</button>
-                <button onclick = {()=> enrutador('ausentismo')} class="cta-primary">Ausentismo</button>
+                <button on:click={() => enrutador('/entregas')} class="cta-primary">Entregas</button>
+                <button on:click={() => enrutador('defectos')} class="cta-primary">Defectos</button>
+                <button on:click={() => enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
+                <button on:click={() => enrutador('stock')} class="cta-primary">Productos</button>
+                <button on:click={() => enrutador('produccion')} class="cta-primary">Produccion</button>
+                <button on:click={() => enrutador('ausentismo')} class="cta-primary">Ausentismo</button>
             </div>
             
         
@@ -546,6 +545,24 @@
   .footer-copyright {
       color: var(--text-tertiary);
       font-size: 0.9rem;
+  }
+
+  .btn-logout {
+    padding: 0.6rem 1.5rem;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .btn-logout:hover {
+    background: #d9363e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
   }
 
 

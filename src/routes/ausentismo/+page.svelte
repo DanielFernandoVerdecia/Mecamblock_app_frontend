@@ -15,20 +15,20 @@
   }
 
   // Estado del formulario
-  let operario = '';
-  let horasTrabajadas: number | null = null;
-  let observaciones = '';
-  let causaMayorFuerza = '';
-  let editingId: number | null = null;
-  let errors: string[] = [];
+  let operario = $state('');
+  let horasTrabajadas = $state<number | null>(null);
+  let observaciones = $state('');
+  let causaMayorFuerza = $state('');
+  let editingId = $state<number | null>(null);
+  let errors = $state<string[]>([]);
 
   // Datos
-  let list: Ausentismo[] = [];
-  let q = '';
+  let list = $state<Ausentismo[]>([]);
+  let q = $state('');
 
   // Modal
-  let showModal = false;
-  let idToDelete: number | null = null;
+  let showModal = $state(false);
+  let idToDelete = $state<number | null>(null);
 
   // Causas predefinidas
   const causasOptions = [
@@ -167,18 +167,29 @@
     q = e.detail.value;
   }
 
-  $: filtered = list.filter(
-    it =>
-      !q ||
-      it.operario.toLowerCase().includes(q.toLowerCase()) ||
-      it.causaMayorFuerza.toLowerCase().includes(q.toLowerCase())
-  );
+  let filtered = $derived.by(() => {
+    return list.filter(
+      it =>
+        !q ||
+        it.operario.toLowerCase().includes(q.toLowerCase()) ||
+        it.causaMayorFuerza.toLowerCase().includes(q.toLowerCase())
+    );
+  });
+
+  function handleSubmit(e: Event) {
+    e.preventDefault();
+    if (editingId) {
+      saveEdit();
+    } else {
+      add();
+    }
+  }
 </script>
 
 <h1 class="page-title">Registro de Ausentismo</h1>
 
 <section>
-  <form on:submit|preventDefault={editingId ? saveEdit : add} class="card">
+  <form onsubmit={handleSubmit} class="card">
     {#if errors.length}
       <ul class="err">{#each errors as e}<li>{e}</li>{/each}</ul>
     {/if}
@@ -229,7 +240,7 @@
     </button>
 
     {#if editingId}
-      <button type="button" on:click={cancelEdit} class="btn btn-danger cancel-btn">
+      <button type="button" onclick={cancelEdit} class="btn btn-danger cancel-btn">
         Cancelar
       </button>
     {/if}
@@ -271,12 +282,12 @@
             <td>{new Date(it.fechaCreacion).toLocaleString()}</td>
             <td>{it.fechaModificacion ? new Date(it.fechaModificacion).toLocaleString() : '-'}</td>
             <td class="acciones">
-              <button on:click={() => startEdit(it)} class="btn btn-success btn-sm">
+              <button onclick={() => startEdit(it)} class="btn btn-success btn-sm">
                 Editar
               </button>
               <button
                 class="btn btn-danger btn-sm"
-                on:click={() => askDelete(it.id)}
+                onclick={() => askDelete(it.id)}
               >
                 Eliminar
               </button>
@@ -305,7 +316,7 @@
     <button
       type="button"
       class="btn btn-outline-light btn-lg volver-btn"
-      on:click={() => enrutador('/ruta_main')}
+      onclick={() => enrutador('/ruta_main')}
     >
       Volver al menú principal
     </button>
