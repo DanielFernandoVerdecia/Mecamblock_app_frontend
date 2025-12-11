@@ -141,11 +141,13 @@
             </datalist>
 
             <div class="input-small">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label class="lbl-tiny">Cant.</label>
                 <input type="number" bind:value={nuevaCantidad} />
             </div>
             
             <div class="input-small">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label class="lbl-tiny">Mín.</label>
                 <input type="number" bind:value={nuevoMinimo} title="Stock Mínimo" />
             </div>
@@ -175,6 +177,7 @@
                 />
             </div>
             <div class="filter-group">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label>Filtrar por Categoría:</label>
                 <select bind:value={categoriaFiltro}>
                     {#each categoriasDisponibles as cat}

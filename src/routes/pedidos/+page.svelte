@@ -1,6 +1,7 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
   import { onMount } from 'svelte';
+  import {enrutador} from '../../routes/router_now'
   
   export let form;
   
@@ -137,6 +138,11 @@
     {#if form?.error}
       <div class="mensaje error">❌ {form.error}</div>
     {/if}
+    <div class="footer-actions">
+    <button type="button" class="btn-back btn-lg" on:click={() => enrutador('/ruta_main')}>
+        Volver al menú principal
+    </button>
+</div>
   </div>
 </div>
 

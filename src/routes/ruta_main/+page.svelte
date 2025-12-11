@@ -65,15 +65,15 @@
 
         
             <div class="cta-buttons">
-                <button on:click={() => enrutador('/entregas')} class="cta-primary">Entregas</button>
-                <button on:click={() => enrutador('defectos')} class="cta-primary">Defectos</button>
-                <button on:click={() => enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
                 <button on:click={() => enrutador('stock')} class="cta-primary">Productos</button>
                 <button on:click={() => enrutador('produccion')} class="cta-primary">Produccion</button>
-                <button on:click={() => enrutador('ausentismo')} class="cta-primary">Ausentismo</button>
-                <button on:click={() => enrutador('diagramas')} class="cta-primary">📊 Diagramas</button>
+                <button on:click={() => enrutador('defectos')} class="cta-primary">Defectos</button>
                 <button on:click={() => enrutador('reportes')} class="cta-primary">Reportes</button>
-                <button on:click={() => enrutador('pedidos')} class="cta-primary">Gestionar pedidos</button>
+                <button on:click={() => enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
+                <button on:click={() => enrutador('diagramas')} class="cta-primary">Diagramas</button>
+                <button on:click={() => enrutador('pedidos')} class="cta-primary">Notificar pedidos</button>
+                <button on:click={() => enrutador('/entregas')} class="cta-primary">Entregas</button>
+                <button on:click={() => enrutador('ausentismo')} class="cta-primary">Ausentismo</button>
             </div>
             
         

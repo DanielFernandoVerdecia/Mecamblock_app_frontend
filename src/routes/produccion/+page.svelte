@@ -6,6 +6,7 @@
 
     // --- ESTADO ---
     let produccion: ProductionRecord[] = [];
+    let stock: StockItem[] = []; // Agregamos estado del stock
     let listaProductosStock: string[] = []; // Para llenar el Select desde Stock
     let cargado = false;
 
@@ -17,6 +18,7 @@
     // Variables de Edición
     let modoEdicion = false;
     let idEdicion: number | null = null;
+    let cantidadAnterior = 0; // Para restar la cantidad anterior en edición
 
     // Variables de Filtro/Visualización
     let fechaFiltro = new Date().toISOString().split('T')[0]; // Para ver producción por día
@@ -34,9 +36,9 @@
         const datosStock = localStorage.getItem('stock_hu04_db');
         if (datosStock) {
             try {
-                const items: StockItem[] = JSON.parse(datosStock);
+                stock = JSON.parse(datosStock);
                 // Extraemos solo los nombres únicos para el dropdown
-                listaProductosStock = [...new Set(items.map(i => i.nombre))];
+                listaProductosStock = [...new Set(stock.map(i => i.nombre))];
             } catch (e) { console.error("Error leyendo stock", e); }
         }
 
@@ -46,6 +48,11 @@
     // Guardado automático
     $: if (cargado) {
         localStorage.setItem('production_hu05_db', JSON.stringify(produccion));
+    }
+
+    // Guardado automático del stock
+    $: if (cargado) {
+        localStorage.setItem('stock_hu04_db', JSON.stringify(stock));
     }
 
     // --- LÓGICA HU05 (Cálculos Automáticos) ---
@@ -62,6 +69,14 @@
         return new Date(isoString).toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' });
     }
 
+    function actualizarStock(nombreProducto: string, cantidad: number) {
+        const productoIndex = stock.findIndex(item => item.nombre === nombreProducto);
+        if (productoIndex !== -1) {
+            stock[productoIndex].cantidad += cantidad;
+            stock[productoIndex].fechaModificacion = new Date().toISOString();
+        }
+    }
+
     // --- ACCIONES ---
 
     function gestionarProduccion() {
@@ -72,6 +87,20 @@
 
         if (modoEdicion && idEdicion !== null) {
             // EDICIÓN (HU05 Criterio 3)
+            const registroEditado = produccion.find(p => p.id === idEdicion);
+            if (registroEditado) {
+                // Si cambió la cantidad, ajustamos el stock
+                const diferencia = cantidadInput - cantidadAnterior;
+                if (registroEditado.productoNombre !== productoSeleccionado) {
+                    // Si cambió el producto, restamos de uno y sumamos al otro
+                    actualizarStock(registroEditado.productoNombre, -cantidadAnterior);
+                    actualizarStock(productoSeleccionado, cantidadInput);
+                } else {
+                    // Si es el mismo producto, solo ajustamos la diferencia
+                    actualizarStock(productoSeleccionado, diferencia);
+                }
+            }
+
             produccion = produccion.map(item => {
                 if (item.id === idEdicion) {
                     return {
@@ -85,16 +114,19 @@
                 return item;
             });
             cancelarEdicion();
-            alert("Se ha editado con éxito!!!");
+            alert("Se ha editado con éxito!!! El stock ha sido actualizado.");
         } else {
             // REGISTRO (HU05 Criterio 1)
             const nuevoRegistro = new ProductionRecord(productoSeleccionado, cantidadInput, fechaInput);
             produccion = [nuevoRegistro, ...produccion];
             
+            // Actualizar stock automáticamente
+            actualizarStock(productoSeleccionado, cantidadInput);
+            
             // Limpieza parcial (mantenemos fecha y producto para agilizar digitación masiva)
             cantidadInput = 0; 
 
-            alert("Se ha creado un registro con éxito");
+            alert("Se ha creado un registro con éxito! El stock se ha actualizado automáticamente.");
         }
     }
 
@@ -102,6 +134,7 @@
         idEdicion = item.id;
         productoSeleccionado = item.productoNombre;
         cantidadInput = item.cantidad;
+        cantidadAnterior = item.cantidad; // Guardar cantidad anterior para calcular diferencia
         fechaInput = item.fechaProduccion;
         modoEdicion = true;
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -111,11 +144,17 @@
         modoEdicion = false;
         idEdicion = null;
         cantidadInput = 0;
+        cantidadAnterior = 0;
         fechaInput = new Date().toISOString().split('T')[0];
     }
 
     function eliminarRegistro(id: number) {
-        if(confirm('¿Eliminar este registro de producción?')) {
+        if(confirm('¿Eliminar este registro de producción? El stock será ajustado.')) {
+            const registroEliminar = produccion.find(p => p.id === id);
+            if (registroEliminar) {
+                // Restar la cantidad del stock cuando se elimina
+                actualizarStock(registroEliminar.productoNombre, -registroEliminar.cantidad);
+            }
             produccion = produccion.filter(p => p.id !== id);
         }
     }
@@ -124,7 +163,7 @@
 <div class="container">
     <header>
         <h1>🏭 Registro de Producción</h1>
-        <p class="subtitle">HU05: Consolidación de información diaria.</p>
+        <p class="subtitle">HU05: Consolidación de información diaria. (Stock se actualiza automáticamente)</p>
     </header>
 
     <section class="panel form-panel" class:editing-mode={modoEdicion}>
@@ -137,11 +176,13 @@
 
         <div class="form-grid">
             <div class="input-group">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label>Fecha Producción</label>
                 <input type="date" bind:value={fechaInput} />
             </div>
 
             <div class="input-group big">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label>Tipo de Producto (Del Inventario)</label>
                 <select bind:value={productoSeleccionado}>
                     <option value="" disabled selected>-- Seleccionar --</option>
@@ -154,6 +195,7 @@
             </div>
 
             <div class="input-group">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label>Cantidad</label>
                 <input type="number" min="1" placeholder="0" bind:value={cantidadInput} />
             </div>
@@ -175,6 +217,7 @@
         
         <div class="dashboard-bar">
             <div class="filter-area">
+                <!-- svelte-ignore a11y_label_has_associated_control -->
                 <label>📅 Ver producción del día:</label>
                 <input type="date" bind:value={fechaFiltro} />
             </div>
@@ -233,10 +276,10 @@
 
 
 <div style = "display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;">
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;">
 
   <button type="button" class="btn btn-secondary btn-lg"
   on:click = {()=> enrutador('/ruta_main')}
