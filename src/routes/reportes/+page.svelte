@@ -30,34 +30,22 @@
   function generateReportMetrics(): ReporteMetricas {
     const mesActual: MetricasMensuales = {
       mes: new Date().toLocaleString('es-ES', { month: 'long', year: 'numeric' }),
-      //ventasProductos: Math.floor(Math.random() * 50000) + 30000,
-      ventasProductos: 0,
-      //fabricacionTotal: Math.floor(Math.random() * 1000) + 500,
-      fabricacionTotal: 0,
-      //heurasOperarios: Math.floor(Math.random() * 500) + 300,
-      heurasOperarios: 0,
-      //ausentismoTotal: Math.floor(Math.random() * 50) + 10,
-      ausentismoTotal: 0,
-      //defectosRegistrados: Math.floor(Math.random() * 100) + 5,
-      defectosRegistrados: 0,
-      //mantenimientos: Math.floor(Math.random() * 30) + 5
-      mantenimientos: 0
+      ventasProductos: Math.floor(Math.random() * 50000) + 30000,
+      fabricacionTotal: Math.floor(Math.random() * 1000) + 500,
+      heurasOperarios: Math.floor(Math.random() * 500) + 300,
+      ausentismoTotal: Math.floor(Math.random() * 50) + 10,
+      defectosRegistrados: Math.floor(Math.random() * 100) + 5,
+      mantenimientos: Math.floor(Math.random() * 30) + 5
     };
 
     const mesPasado: MetricasMensuales = {
       mes: new Date(new Date().setMonth(new Date().getMonth() - 1)).toLocaleString('es-ES', { month: 'long', year: 'numeric' }),
-      //ventasProductos: Math.floor(Math.random() * 45000) + 25000,
-      ventasProductos: 0,
-      //fabricacionTotal: Math.floor(Math.random() * 950) + 400,
-      fabricacionTotal: 0,
-      //heurasOperarios: Math.floor(Math.random() * 480) + 280,
-      heurasOperarios: 0,
-      //ausentismoTotal: Math.floor(Math.random() * 60) + 15,
-      ausentismoTotal: 0,
-      //defectosRegistrados: Math.floor(Math.random() * 120) + 10,
-      defectosRegistrados: 0,
-      //mantenimientos: Math.floor(Math.random() * 35) + 8
-      mantenimientos: 0
+      ventasProductos: Math.floor(Math.random() * 45000) + 25000,
+      fabricacionTotal: Math.floor(Math.random() * 950) + 400,
+      heurasOperarios: Math.floor(Math.random() * 480) + 280,
+      ausentismoTotal: Math.floor(Math.random() * 60) + 15,
+      defectosRegistrados: Math.floor(Math.random() * 120) + 10,
+      mantenimientos: Math.floor(Math.random() * 35) + 8
     };
 
     const porcentajeIncrementoVentas = ((mesActual.ventasProductos - mesPasado.ventasProductos) / mesPasado.ventasProductos) * 100;
