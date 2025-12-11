@@ -23,39 +23,47 @@
   // Generar datos aleatorios
   function generateProductionData() {
     const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-    const data = dias.map(() => Math.floor(Math.random() * 500) + 200);
+    //const data = dias.map(() => Math.floor(Math.random() * 500) + 200);
+    const data = dias.map(() => 0);
     return { labels: dias, data };
   }
 
   function generateMonthlyData() {
     const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-    const data = meses.map(() => Math.floor(Math.random() * 5000) + 2000);
+    //const data = meses.map(() => Math.floor(Math.random() * 5000) + 2000);
+    const data = meses.map(() => 0);
     return { labels: meses, data };
   }
 
   function generateProductComparison() {
     const productos = ['Bloques A', 'Bloques B', 'Bloques C', 'Bloques D', 'Bloques E', 'Bloques F'];
-    const data = productos.map(() => Math.floor(Math.random() * 1000) + 500);
+    //const data = productos.map(() => Math.floor(Math.random() * 1000) + 500);
+    const data = productos.map(() => 0);
     return { labels: productos, data };
   }
 
   function generateQualityData() {
     const categorias = ['Excelente', 'Bueno', 'Regular', 'Defectuoso'];
-    const data = [Math.floor(Math.random() * 400) + 300, Math.floor(Math.random() * 200) + 100, Math.floor(Math.random() * 80) + 20, Math.floor(Math.random() * 50) + 10];
+    //const data = [Math.floor(Math.random() * 400) + 300, Math.floor(Math.random() * 200) + 100, Math.floor(Math.random() * 80) + 20, Math.floor(Math.random() * 50) + 10];
+    const data = [0, 0, 0, 0];
     return { labels: categorias, data };
   }
 
   function generateOperaryEfficiency() {
     const operarios = ['Op. 1', 'Op. 2', 'Op. 3', 'Op. 4', 'Op. 5', 'Op. 6', 'Op. 7'];
-    const data = operarios.map(() => Math.floor(Math.random() * 30) + 70);
+    //const data = operarios.map(() => Math.floor(Math.random() * 30) + 70);
+    const data = operarios.map(() => 0);
     return { labels: operarios, data };
   }
 
   function generateTrendData() {
     const semanas = ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5'];
-    const produccion = semanas.map(() => Math.floor(Math.random() * 1000) + 2000);
-    const ventas = semanas.map(() => Math.floor(Math.random() * 5000) + 15000);
-    const defectos = semanas.map(() => Math.floor(Math.random() * 100) + 20);
+    //const produccion = semanas.map(() => Math.floor(Math.random() * 1000) + 2000);
+    //const ventas = semanas.map(() => Math.floor(Math.random() * 5000) + 15000);
+    //const defectos = semanas.map(() => Math.floor(Math.random() * 100) + 20);
+    const produccion = semanas.map(() => 0);
+    const ventas = semanas.map(() => 0);
+    const defectos = semanas.map(() => 0);
     return { labels: semanas, produccion, ventas, defectos };
   }
 
@@ -389,22 +397,22 @@
     <div class="metrics-summary">
       <div class="summary-card">
         <h4>Producción Promedio</h4>
-        <p class="summary-value">350</p>
+        <p class="summary-value">0</p>
         <p class="summary-unit">unidades/día</p>
       </div>
       <div class="summary-card">
         <h4>Tasa de Defectos</h4>
-        <p class="summary-value">5.8%</p>
+        <p class="summary-value">0%</p>
         <p class="summary-unit">mensual</p>
       </div>
       <div class="summary-card">
         <h4>Eficiencia Promedio</h4>
-        <p class="summary-value">82%</p>
+        <p class="summary-value">0%</p>
         <p class="summary-unit">operarios</p>
       </div>
       <div class="summary-card">
         <h4>Productos en Stock</h4>
-        <p class="summary-value">2,450</p>
+        <p class="summary-value">0</p>
         <p class="summary-unit">unidades</p>
       </div>
     </div>
