@@ -217,7 +217,7 @@
 
     <div class="input-group">
       <label for="causa">Causa de fuerza mayor:</label>
-      <select bind:value={causaMayorFuerza} class="input" id="causa">
+      <select bind:value={causaMayorFuerza} class="causa-badge" id="causa">
         <option value="">Selecciona una opción</option>
         {#each causasOptions as causa}
           <option value={causa}>{causa}</option>
@@ -513,23 +513,25 @@
   }
 
   .causa-badge {
-    padding: 0.3rem 0.8rem;
+    width: 100%;
+    padding: 0.9rem 1.2rem;
     border-radius: 1rem;
-    font-weight: 600;
-    font-size: 1rem;
-    text-transform: capitalize;
-    display: inline-block;
-    border: 1px solid;
+    border: 1px solid #4f83f7;
+    background: rgba(255, 255, 255, 0.788);
+    color: #000000;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border 0.2s;
   }
 
   .causa-badge.enfermedad {
-    background: rgba(255, 193, 7, 0.15);
-    color: #ffc107;
-    border-color: #ffc107;
+    background: rgba(0, 0, 0, 0);
+    color: #000000;
+    border-color: #000000;
   }
 
   .causa-badge.accidente {
-    background: rgba(244, 67, 54, 0.15);
+    background: rgba(82, 54, 244, 0.15);
     color: #f44336;
     border-color: #f44336;
   }
@@ -615,7 +617,7 @@
 
   .no-data {
     text-align: center;
-    color: #bbb;
+    color: #bbbbbb;
     font-size: 1.2rem;
     padding: 2rem;
   }

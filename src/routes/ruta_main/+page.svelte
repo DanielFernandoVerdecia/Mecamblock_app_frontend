@@ -65,15 +65,15 @@
 
         
             <div class="cta-buttons">
-                <button on:click={() => enrutador('stock')} class="cta-primary">Productos</button>
-                <button on:click={() => enrutador('produccion')} class="cta-primary">Produccion</button>
-                <button on:click={() => enrutador('defectos')} class="cta-primary">Defectos</button>
-                <button on:click={() => enrutador('reportes')} class="cta-primary">Reportes</button>
-                <button on:click={() => enrutador('mantenimiento')} class="cta-primary">Mantenimientos</button>
-                <button on:click={() => enrutador('diagramas')} class="cta-primary">Diagramas</button>
-                <button on:click={() => enrutador('pedidos')} class="cta-primary">Notificar pedidos</button>
-                <button on:click={() => enrutador('/entregas')} class="cta-primary">Entregas</button>
-                <button on:click={() => enrutador('ausentismo')} class="cta-primary">Ausentismo</button>
+                <button on:click={() => enrutador('stock')} class="cta-primary">Productos HU04</button>
+                <button on:click={() => enrutador('produccion')} class="cta-primary">Produccion Diaria HU05</button>
+                <button on:click={() => enrutador('defectos')} class="cta-primary">Defectos HU02</button>
+                <button on:click={() => enrutador('reportes')} class="cta-primary">Reportes HU06</button>
+                <button on:click={() => enrutador('mantenimiento')} class="cta-primary">Mantenimientos HU03</button>
+                <button on:click={() => enrutador('diagramas')} class="cta-primary">Diagramas HU09</button>
+                <button on:click={() => enrutador('pedidos')} class="cta-primary">Notificar pedidos HU08</button>
+                <button on:click={() => enrutador('/entregas')} class="cta-primary">Entregas HU01</button>
+                <button on:click={() => enrutador('ausentismo')} class="cta-primary">Ausentismo HU10</button>
             </div>
             
         
